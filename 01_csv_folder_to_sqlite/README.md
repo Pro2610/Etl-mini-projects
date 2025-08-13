@@ -101,7 +101,7 @@ Basic unit testing with Pytest
 📈 Example Output in SQLite
 
 order_id	  product_id	  order_date	  quantity  	price	     revenue
-1             	101	        2024-01-05	     2	       10.5	      21.0
+1             	101	        2024-01-05	     2	        10.5	      21.0
 2	            102	      2024-01-06	     1	           20.0	      20.0
 3	            103	      2024-01-07	     3	           5.0	      15.0
  
