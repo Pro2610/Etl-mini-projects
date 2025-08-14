@@ -5,3 +5,4 @@ sqlite-utils
 prefect>=2.16
 pydantic
 pytest
+requests
