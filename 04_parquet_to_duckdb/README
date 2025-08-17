@@ -1,0 +1,15 @@
+# Project 04 — Parquet to DuckDB (Mini Warehouse)
+
+## Goal
+Load Parquet snapshots (from Project 02) into a local DuckDB warehouse with a simple star schema:
+- dim_currency(symbol, currency_key)
+- fact_rates(date, base, currency_key, rate)
+
+## Run
+```bash
+pip install -r ../../00_common/requirements.txt
+python flows/flow.py
+Files
+DB file: warehouse.duckdb
+
+SQL samples: sql/01_sample_queries.sql
