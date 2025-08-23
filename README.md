@@ -7,7 +7,7 @@ A collection of small ETL (Extract, Transform, Load) projects to practice data e
 ## 🧠 Skills & Tools
 
 **Languages & Databases:**
-- SQL (PostgreSQL, BigQuery, SQLite)
+- SQL (PostgreSQL, BigQuery, SQLite, DuckDB)
 - Python (pandas, Jupyter)
 
 **Data Tools:**
@@ -31,12 +31,12 @@ A collection of small ETL (Extract, Transform, Load) projects to practice data e
 
 ---
 
-### 02 — API to Parquet Daily (in progress)
-- **Goal:** Extract exchange rates data from an API and store it in raw JSON and processed Parquet files.  
+### 02 — API to Parquet Daily (offline mode)
+- **Goal:** Extract exchange rates data (or load sample JSON) and store it in raw JSON and processed Parquet files.  
 - **Tools:** Python, Requests, Pandas, Prefect  
 - **Result:**  
   - Raw data: `data_lake/raw/YYYY-MM-DD.json`  
-  - Processed data: `data_lake/silver/date=YYYY-MM-DD/rates.parquet`
+  - Processed data: `data_lake/silver/date=YYYY-MM-DD/rates.parquet`  
 
 ---
 
@@ -49,7 +49,20 @@ A collection of small ETL (Extract, Transform, Load) projects to practice data e
 
 ---
 
+### 04 — Parquet to DuckDB (Mini Warehouse)
+- **Goal:** Load Parquet snapshots (from Project 02) into a local DuckDB “warehouse” with a simple star schema.  
+- **Tools:** Python, DuckDB, Parquet  
+- **Schema:**  
+  - `dim_currency(symbol, currency_key)`  
+  - `fact_rates(date, base, currency_key, rate)`  
+- **Result:**  
+  - Database: `warehouse.duckdb`  
+  - Example queries in `sql/01_sample_queries.sql`
+
+---
+
 ## 📌 Next Steps
 - Extend Project 03 to connect with a real Postgres database.  
 - Automate daily API ingestion in Project 02.  
 - Add visualization dashboards for processed datasets.  
+- Explore advanced transformations and orchestration with Prefect.
