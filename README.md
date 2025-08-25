@@ -61,6 +61,16 @@ A collection of small ETL (Extract, Transform, Load) projects to practice data e
 
 ---
 
+### 05 — JSON Logs to DuckDB (Product Analytics)
+- **Goal:** Ingest JSON event logs, transform them into Parquet (silver), and load into a DuckDB warehouse for simple product analytics.  
+- **Tools:** Python, Pandas, DuckDB, Parquet  
+- **Result:**  
+  - `fact_events` table in `warehouse.duckdb`  
+  - Example queries in `sql/queries.sql` (DAU, event counts, retention, simple funnel)
+- **Run:** `python 05_json_logs_to_duckdb/flows/flow.py`
+
+---
+
 ## 📌 Next Steps
 - Extend Project 03 to connect with a real Postgres database.  
 - Automate daily API ingestion in Project 02.  
