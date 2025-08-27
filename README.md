@@ -66,10 +66,11 @@ A collection of small ETL (Extract, Transform, Load) projects to practice data e
 - **Tools:** Python, Pandas, DuckDB, Parquet  
 - **Result:**  
   - `fact_events` table in `warehouse.duckdb`  
-  - Example queries in `sql/queries.sql` (DAU, event counts, retention, simple funnel)
+  - Example queries in `sql/queries.sql` (DAU, event counts, retention, simple funnel)  
 - **Run:** `python 05_json_logs_to_duckdb/flows/flow.py`
 
 ---
+
 ### 06 — Merge CSV + JSON → DuckDB (EUR)
 - **Goal:** Merge transactions from CSV with FX rates (JSON, base=EUR), convert all amounts into EUR, and load into a DuckDB warehouse.  
 - **Tools:** Python, Pandas, DuckDB, Parquet  
@@ -80,6 +81,14 @@ A collection of small ETL (Extract, Transform, Load) projects to practice data e
   - Normalized transactions in `warehouse.duckdb`  
   - Example queries in `sql/queries.sql` (total revenue, revenue by user, daily trend)  
 - **Run:** `python 06_merge_csv_api_duckdb/flows/flow.py`
+
+---
+
+### 07 — Orchestration & Scheduling (Prefect)
+- **Goal:** Wrap CSV+JSON → DuckDB pipeline in a Prefect 2 flow with retries, logging, and parameters.  
+- **Tools:** Python, Prefect, DuckDB, Pandas  
+- **Result:** `warehouse.duckdb` built via orchestrated flow; ready for scheduling.  
+- **Run:** `python 07_orchestration_prefect/flows/flow.py`
 
 ---
 
