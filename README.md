@@ -92,9 +92,18 @@ A collection of small ETL (Extract, Transform, Load) projects to practice data e
 
 ---
 
+### 08 — BI Dashboard (Power BI / Tableau)
+- **Goal:** Build a simple analytics dashboard from curated exports of the DuckDB warehouse (Projects 06/07).  
+- **Tools:** Power BI / Tableau, DuckDB, Python, CSV/Parquet  
+- **Data Prep:** `python 08_dashboard/flows/export.py` → outputs in `data_export/`  
+- **Visuals:** KPIs (Total Revenue, Users, Transactions), Daily Revenue (line), Revenue by User (bar)
+
+---
+
 ## 📌 Next Steps
 - Extend Project 03 to connect with a real Postgres database.  
 - Automate daily API ingestion in Project 02.  
-- Add visualization dashboards for processed datasets.  
+- Add visualization dashboards for processed datasets (Power BI/Tableau).  
 - Explore advanced transformations and orchestration with Prefect.  
 - Experiment with larger datasets and performance tuning in DuckDB.  
+
