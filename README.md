@@ -100,10 +100,20 @@ A collection of small ETL (Extract, Transform, Load) projects to practice data e
 
 ---
 
+### 09 — Data Quality (Basic Validator)
+- **Goal:** Validate datasets before loading into the warehouse: check non-nulls, ranges, dates, and uniqueness.  
+- **Tools:** Python, Pandas, DuckDB  
+- **Checks:**  
+  - `fact_transactions`: user_id not null/int, amount_eur ≥ 0, date not in future  
+  - `dim_currency`: symbol unique, allowed values, rate_to_eur > 0  
+- **Run:** `python 09_data_quality_basic/flows/validate.py`
+
+---
+
 ## 📌 Next Steps
 - Extend Project 03 to connect with a real Postgres database.  
 - Automate daily API ingestion in Project 02.  
 - Add visualization dashboards for processed datasets (Power BI/Tableau).  
 - Explore advanced transformations and orchestration with Prefect.  
 - Experiment with larger datasets and performance tuning in DuckDB.  
-
+- Upgrade Data Quality with Great Expectations once compatible with Python 3.13.
